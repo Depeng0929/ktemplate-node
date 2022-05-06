@@ -31,7 +31,7 @@ export class HomeController {
   }
 
   @Get(':id')
-  finOne(@Param('id') id: string): string {
-    return `Hello finOne ${id}`;
+  finOne(@Param('id') id: string) {
+    return this.userService.findByProxy();
   }
 }

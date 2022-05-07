@@ -1,12 +1,11 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
-import { HomeController } from './home.controller';
-import { UserService } from './home.service';
+import { UserController } from 'src/modules/user/user.controller';
+import { UserService } from 'src/modules/user/user.service';
 
 @Module({
-  controllers: [HomeController],
+  controllers: [UserController],
   providers: [UserService],
-  // otherModule can import
   imports: [
     HttpModule.register({
       timeout: 5000,
